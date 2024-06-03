@@ -15,35 +15,35 @@ class ReviewSeeder extends Seeder
     {
         Review::create([
             'id' => 1,
-            'name' => 'Jojo Bizarre Adventure',
+            'movie_id' => '1',
             'user' => 'Jupri',
             'ratting' => '3/10',
             'date' => '15/03/24',
         ]);
         Review::create([
             'id' => 2,
-            'name' => 'Naruto Shippudden',
+            'movie_id' => '4',
             'user' => 'Asep',
             'ratting' => '9.5/10',
             'date' => '21/08/24',
         ]);
         Review::create([
             'id' => 3,
-            'name' => 'One Piece',
+            'movie_id' => '5',
             'user' => 'Hilal',
             'ratting' => '9.8/10',
             'date' => '10/05/24',
         ]);
         Review::create([
             'id' => 4,
-            'name' => 'Norigami',
+            'movie_id' => '2',
             'user' => 'Fauzan',
             'ratting' => '5/10',
             'date' => '03/09/24',
         ]);
         Review::create([
             'id' => 5,
-            'name' => 'Wind Breaker',
+            'movie_id' => '3',
             'user' => 'Jamal',
             'ratting' => '9/10',
             'date' => '13/05/24',
