@@ -12,16 +12,16 @@ class GenreController extends Controller
     {
         $genres = Genre::all();
 
-        return view('genres/index', compact('genres'));
+        return view('genres.index', compact('genres'));
     }
 
-        public function create()
+    public function create()
     {
         $genres = Genre::all();
         return view('genres.create', compact('genres'));
     }
 
-        public function store(Request $request)
+    public function store(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required',
@@ -33,9 +33,27 @@ class GenreController extends Controller
         return redirect('/genres')->with('success', 'Genre added successfully!');
     }
 
-        public function destroy(Genre $genre)
+    public function edit(Genre $genre)
     {
-        $genre->delete();
-        return redirect('/genres')->with('success', 'Ganre deleted successfully!');
+        $genres = Genre::all();
+        return view('genres.edit', compact('genre', 'genres'));
     }
+
+    public function update(Request $request, Genre $genre)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        $genre->update($validatedData);
+
+        return redirect('/genres')->with('success', 'genre updated successfully!');
+    }
+
+    public function destroy(Genre $genre)
+        {
+            $genre->delete();
+            return redirect('/genres')->with('success', 'Genre deleted successfully!');
+        }
 }
